@@ -5,6 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
 <title>vai ou vai?</title>
 <style>
+  body {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.phone {
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
+  min-height: 0;
+  padding: 24px 18px;
+  margin: auto;
+}
+
+.screen,
+.card {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 360px) {
+  .phone {
+    padding: 20px 12px;
+  }
+
+  .card {
+    padding: 18px 14px 22px;
+  }
+}
   :root{
     --bg-1:#ff5b3d;
     --bg-2:#e0331a;
@@ -120,21 +152,29 @@
   .opt:active{transform:scale(.95);}
   .opt.selected{border-color:var(--accent);background:#ffe14d22;box-shadow:0 0 0 2px var(--accent) inset;}
 
-  input[type="date"],input[type="time"]{
-    width:100%;
-    padding:13px 14px;
-    margin-bottom:12px;
-    border-radius:12px;
-    border:1.5px solid #ffffff30;
-    background:#ffffff12;
-    color:var(--ink);
-    font-size:15px;
-    font-family:inherit;
-  }
-  input[type="date"]::-webkit-calendar-picker-indicator,
-  input[type="time"]::-webkit-calendar-picker-indicator{filter:invert(1);}
-  label.field{display:block;text-align:left;font-size:13px;color:var(--ink-dim);margin:0 0 6px 4px;}
+  input[type="date"],
+input[type="time"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1.5px solid #ffffff30;
+  background: #ffffff12;
+  color: var(--ink);
+  font-size: 16px;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
 
+input::-webkit-date-and-time-value {
+  min-width: 0;
+  text-align: center;
+}
   .btn-main{
     width:100%;
     margin-top:14px;
